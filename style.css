@@ -15,7 +15,7 @@ body {
 
 .frontMain {
     display: flex;
-    height: 700px;
+    height: 64;
 }
 .column {
     flex: 50%;
@@ -25,9 +25,9 @@ body {
     overflow: hidden;
 }
 .column img {
-    flex-shrink: 1;
     min-width: 100%;
-    min-height: 100%
+    object-fit: cover;
+
 }
 
 .clmMainPart {
@@ -49,11 +49,11 @@ ul {
     justify-content: space-between;
     padding: 10px;
     height: 60px;
+    width: 100%;
     
 }
 .navLogo img {
-    margin-left: -300px;
-    scale: 0.1;
+    width: 10%;
     border-radius: 50%;
     font-size: 30px;
     color: black;
@@ -85,29 +85,29 @@ ul {
 }
 
 .newCollection {
-    margin-left: -400px;
+    margin-left: -28vw;
     font-family: Great Vibes;
-    font-size: 20pt;
+    font-size: 2vw;
     color: #222222;
 }
 
 .mainHeading {
     margin-top: -10px;
     text-transform: uppercase;
-    padding-left: 100px;
+    padding-left: 5vw;
     font-family: Yeseva One;
-    font-size: 50pt;
+    font-size: 5vw;
     color: #222222;
 }
 
 .btnInFrontPage {
     font-family: PlayFair Display;
-    font-size: 15px;
+    font-size: 1vw;
     padding: 10px;
     margin-top: -30px;
     padding-left: 20px;
     padding-right: 20px;
-    margin-left: -450px;
+    margin-left: -30vw;
     cursor: pointer;
     border: none;
     background-color: #fcb08c;
@@ -149,7 +149,6 @@ ul {
 .accessory {
     display: flex;
     max-width: 100%;
-    color: #d5eaec;
     flex-direction: row;
     height: 400px;
 }
@@ -157,6 +156,7 @@ ul {
 .itemSell img {
     border: 2px solid black;
     max-width: 100%;
+    width: 100%;
     transform:scale(0.5);    
     padding: 0px;
     margin: 0px;
@@ -170,18 +170,15 @@ ul {
     flex-direction: column;
 }
 
-.imagg {
-    background-image: url('Images/palette.jpg');
-}
-
 .shopMore {
 
+    font-size: 0.8vw;
     font-family: PlayFair Display;
     border: 1px solid black;
     padding: 10px;
     background-color: white;
     cursor: pointer;
-    width: 200px;
+    width: 12.6vw;
     transition: 0.3s;
 }
 
