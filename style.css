@@ -156,17 +156,20 @@ header{
 }
 
 .parallaxImg {
-    background-image:url('Images/accessories1.webp');
     flex-shrink: 1;
     height: 50vh;
     background-attachment: fixed;
     background-size: cover;
     background-repeat: no-repeat ;
 }
-.parallaxImg:nth-child(2) {
+
+.prlxImg-1 {
+    background-image:url('Images/accessories1.webp');
+}
+.prlxImg-2 {
     background-image:url('Images/bg2.webp');
 }
-.parallaxImg:nth-child(3) {
+.prlxImg-3 {
     background-image:url('Images/bg3.webp');
 }
 
