@@ -1,0 +1,70 @@
+@media (max-width: 770px) {
+    .hero{
+        flex-direction: column;
+    }
+    .hero-left{
+        width: auto;
+        object-fit: fill;
+        margin-bottom: 10px;
+    }
+    .hero-right h1{
+        font-size: 3rem;
+    }
+
+    .heading{
+        font-size: 2.5rem;
+    }
+
+    .quoteForHeading{
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    .shopMore{
+        font-size: 0.8rem;
+    }
+
+    .parallaxImg {
+        height: 25vh;    
+    }
+}
+
+@media (max-width: 500px) {
+
+    .menu{
+        position: fixed;
+        z-index: 10;
+        inset: 0 0 0 30%;
+        font-size: 2rem;
+        gap: 2.5rem;
+        flex-direction: column;
+        background: hsla(0, 0%, 100%, 0.5);
+        backdrop-filter: blur(1rem);
+        padding:min(20vh, 10rem) 2rem ;
+        justify-content: flex-start;
+        transform: translate(100%);
+        transition: transform 0.35s ease-out;
+    }
+
+    .menu[data-visible="true"] {
+        transform: translate(0);
+    }
+
+    .toggleBtn {
+        display: block;
+        position: absolute;
+        z-index: 9999;
+        background: url(Images/icon-hamburger.svg);
+        background-repeat: no-repeat;
+        border: 0;
+        width: 2rem;
+        aspect-ratio: 1;
+        top: 2rem;
+        right: 2rem;
+    }
+
+    .toggleBtn[aria-expanded ="true"] {
+        background: url(Images/icon-close.svg);
+        background-repeat: no-repeat;
+    }
+}

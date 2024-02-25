@@ -1,5 +1,48 @@
-html {
-    height: 100%;
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+/*
+  Typographic tweaks!
+  3. Add accessible line-height
+  4. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+  5. Improve media defaults
+*/
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  6. Remove built-in form typography styles
+*/
+input, button, textarea, select {
+  font: inherit;
+}
+/*
+  7. Avoid text overflows
+*/
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+/*
+  8. Create a root stacking context
+*/
+#root, #__next {
+  isolation: isolate;
 }
 
 * {
@@ -8,60 +51,31 @@ html {
     font-family: PlayFair Display;
 }
 
-body {
-    font-family: PlayFair Display;
-    height: 100%;
+header{
+    position:sticky;
+    z-index: 100;
 }
-
-.frontMain {
+.navBar{
+    position: relative;
     display: flex;
-    height: 64;
-}
-.column {
-    flex: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-}
-.column img {
-    min-width: 100%;
-    object-fit: cover;
-
-}
-
-.clmMainPart {
-    flex-direction: column;
-    justify-content: center;
-    background-color: #d5eaec;
-
-}
-
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-.navBar {
-    display: flex;
-    align-items: center;
     justify-content: space-between;
-    padding: 10px;
-    height: 60px;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    background-color: #fff;
+    position: fixed;
     width: 100%;
-    
+    z-index: 100;
 }
-.navLogo img {
-    width: 10%;
-    border-radius: 50%;
-    font-size: 30px;
-    color: black;
+.navBar img{
+    width: 65px;
 }
 .navLogo:hover {
     cursor: pointer;   
 }
-
+.menu {
+    display: flex;
+    gap: 1rem;
+}
 .navMenu {
     cursor: pointer;
     color: black;
@@ -69,181 +83,135 @@ ul {
     padding-left: 10px;
     padding-right: 10px;
 }
-
 .navMenu:hover {
     color: #BB7E5D;
 }
-
-.menu {
-    display: flex;
-    gap: 1em;
-    font-size: 18px;
-}
-
 .navMainElem {
     color: #BB7E5D;
 }
 
-.newCollection {
-    margin-left: -28vw;
+.hero {
+    height:100vh;
+    display: flex;
+}
+.hero-left {
+    width: 50%;
+    flex:1;
+    object-fit: cover;
+}
+.hero-right{
+    flex:1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.hero-right h3{
     font-family: Great Vibes;
-    font-size: 2vw;
+    text-align: center;
+    font-size: 2rem;
     color: #222222;
 }
-
-.mainHeading {
-    margin-top: -10px;
+.hero-right h1{
     text-transform: uppercase;
-    padding-left: 5vw;
+    text-align: center;
     font-family: Yeseva One;
-    font-size: 5vw;
+    font-size: 4rem;
     color: #222222;
 }
-
-.btnInFrontPage {
+.hero-right button{
     font-family: PlayFair Display;
-    font-size: 1vw;
-    padding: 10px;
-    margin-top: -30px;
-    padding-left: 20px;
-    padding-right: 20px;
-    margin-left: -30vw;
+    font-size: 1rem;
+    padding: 10px 20px;
     cursor: pointer;
     border: none;
     background-color: #fcb08c;
     color: #222222;
     transition: 0.2s;
 }
-.btnInFrontPage:hover {
-    background-color: #e1c5b7;
+.hero-right button:hover{
+    background-color: #e1c5b7;;
 }
 
-.quote {
+.toggleBtn{
+    display: none;
+}
+
+.quote{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 300px;
+    height: 18.75rem;
     color: #222222;
 }
-.Heading {
+.heading{
     text-transform: uppercase;
-    font-size: 40pt;
+    font-size: 3.5rem;
     font-family: Yeseva One;
 }
 .quoteForHeading {
-    margin-top: -30px;
     font-family: Yeseva One;
     font-weight: 100;
 }
 
-.imageAccess {
-    background-image:url('Images/accessories1.jpg');
+.parallaxImg {
+    background-image:url('Images/accessories1.webp');
     flex-shrink: 1;
-    min-height: 50%;
+    height: 50vh;
     background-attachment: fixed;
     background-size: cover;
     background-repeat: no-repeat ;
+}
+.parallaxImg:nth-child(2) {
+    background-image:url('Images/bg2.webp');
+}
+.parallaxImg:nth-child(3) {
+    background-image:url('Images/bg3.webp');
 }
 
 .accessory {
     display: flex;
     max-width: 100%;
-    flex-direction: row;
-    height: 400px;
-}
-
-.itemSell img {
-    border: 2px solid black;
-    max-width: 100%;
-    width: 100%;
-    transform:scale(0.5);    
-    padding: 0px;
-    margin: 0px;
-    
+    flex-wrap: wrap;
 }
 .itemSell {
-    max-width: 100%;
-    padding: 0px;
+    flex: 1 1 10rem;
+    margin: 1rem;
     display: flex;
+    justify-content: center;
     align-items: center;
+    gap:1rem;
     flex-direction: column;
+    border-radius: 10px;
+    transition: 0.2s;
 }
-
+.itemSell img {
+    width: 85%;
+    height: 100%;
+    object-fit: cover;
+}
+.itemsText {
+    flex: 2;
+    color: #222222;
+}
 .shopMore {
-
-    font-size: 0.8vw;
+    flex:2;
     font-family: PlayFair Display;
     border: 1px solid black;
     padding: 10px;
     background-color: white;
     cursor: pointer;
-    width: 12.6vw;
+    font-size: 1rem;
+    padding: 10px 20px;
     transition: 0.3s;
 }
-
 .shopMore:hover {
     background-color: #222222;
     color: white;
 }
 
-.itemsText {
-    color: #222222;
-    margin-top: -85px;
-}
-
-.imageAccess1 {
-    background-image:url('Images/bg2.jpg');
-    flex-shrink: 1;
-    min-height: 50%;
-    background-attachment: fixed;
-    background-size: cover;
-    background-repeat: no-repeat ;
-}
-
-.imageAccess2 {
-    background-image:url('Images/bg3.jpg');
-    flex-shrink: 1;
-    min-height: 50%;
-    background-attachment: fixed;
-    background-size: cover;
-    background-repeat: no-repeat ;
-}
-
-.newsletter {
-    padding-top: 70px;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    height: 200px;
-}
-#emailNewsletter {
-    margin-top: 0px; 
-    font-size: 15px;
-    width: 300px;
-    padding: 9.5px;
-    padding-left: 10px;
-}
-
-.btnInFrontPage1 {
-    font-family: PlayFair Display;
-    font-size: 15px;
-    padding: 10px;
-    padding-left: 20px;
-    padding-right: 20px;
-    cursor: pointer;
-    border: none;
-    background-color: #fcb08c;
-    color: #222222;
-    transition: 0.2s;
-}
-.btnInFrontPage1:hover {
-    background-color: #e1c5b7;
-}
-
-
 .contactus {
-    margin-bottom: -50px;
     margin-top: 50px;
     font-size: 20px;
     display: flex;
@@ -256,9 +224,40 @@ ul {
     cursor: pointer;
 }
 
+.newsletter {
+    margin: 1rem;
+    display: flex;
+    gap:0.5rem;
+    align-items: center;
+    flex-direction: column;
+}
+#emailNewsletter {
+    margin-top: 0px; 
+    font-size: 15px;
+    width: 300px;
+    padding: 9.5px;
+    padding-left: 10px;
+}
+.subscribe {
+    font-family: PlayFair Display;
+    font-size: 15px;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    cursor: pointer;
+    border: none;
+    background-color: #fcb08c;
+    color: #222222;
+    transition: 0.2s;
+}
+.subscribe:hover {
+    background-color: #e1c5b7;
+}
+
 .madeby {
+    margin: 1rem;
+    align-items: center;
     font-size: 17px;
-    margin-top: -25px;
     text-align: center;
     height: 50px;
 }

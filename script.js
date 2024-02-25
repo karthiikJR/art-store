@@ -1,17 +1,18 @@
-document.addEventListener("DOMContentLoaded", function () {
-	var itemSellElements = document.querySelectorAll(".itmImg");
 
-	itemSellElements.forEach(function (element) {
-		element.addEventListener("mouseover", function () {
-			// Scale up the element
-			element.style.transform = "scale(0.55)";
-            element.style.transition = "transform 0.2s ease";
-		});
+// Hamburger menu
+const navBar = document.querySelector(".menu");
+const toggle = document.querySelector(".toggleBtn");
 
-		element.addEventListener("mouseleave", function () {
-			// Scale back to the original size
-			element.style.transform = "scale(0.5)";
-            element.style.transition = "transform 0.2s ease";
-		});
-	});
+toggle.addEventListener("click", () => {
+	const visible = navBar.getAttribute("data-visible");
+	
+	if(visible == "false") {
+		navBar.setAttribute("data-visible", true);
+		toggle.setAttribute("aria-expanded", true);
+	}
+	else {
+		navBar.setAttribute("data-visible", false);
+		toggle.setAttribute("aria-expanded", false);
+	}
 });
+
